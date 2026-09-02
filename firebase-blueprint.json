@@ -1,0 +1,26 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "description": "Stores user profiles with their specific roles.",
+      "fields": {
+        "uid": "string",
+        "email": "string",
+        "role": "string (candidate, recruiter)",
+        "createdAt": "timestamp"
+      }
+    }
+  ],
+  "roles": [
+    {
+      "name": "candidate",
+      "description": "A candidate looking for jobs and analyzing their resume.",
+      "criteria": "resource.data.role == 'candidate'"
+    },
+    {
+      "name": "recruiter",
+      "description": "A recruiter looking for candidates.",
+      "criteria": "resource.data.role == 'recruiter'"
+    }
+  ]
+}
