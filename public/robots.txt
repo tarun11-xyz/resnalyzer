@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://resnalyzer.tarun11.in/sitemap.xml
