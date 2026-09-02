@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Loader2, Trophy, Minus, Check } from 'lucide-react';
 
@@ -11,6 +11,7 @@ const Logo = ({ fill = "#192837", width = "32", height = "32", className = "" }:
 
 export default function Compare() {
   const location = useLocation();
+  const navigate = useNavigate();
   const state = location.state as { resumeText1?: string, resumeText2?: string, fileName1?: string, fileName2?: string };
 
   const [data, setData] = useState<any>(null);
@@ -20,8 +21,7 @@ export default function Compare() {
   useEffect(() => {
     async function compareResumes() {
       if (!state?.resumeText1 || !state?.resumeText2) {
-        setError('Missing resume text to compare.');
-        setLoading(false);
+        navigate('/analyze', { replace: true });
         return;
       }
       try {
