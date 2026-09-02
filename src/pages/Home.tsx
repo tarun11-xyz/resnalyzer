@@ -13,7 +13,13 @@ const fadeUp = {
   })
 };
 
-const navLinks = ['Analyze', 'Compare', 'Resumes', 'Pricing', 'Tools'];
+const navLinks = [
+  { name: 'Analyze', path: '/analyze' },
+  { name: 'Compare', path: '/compare' },
+  { name: 'Resumes', path: '#' },
+  { name: 'Pricing', path: '#' },
+  { name: 'Tools', path: '#' }
+];
 
 const Logo = ({ fill = "#192837" }: { fill?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" overflow="visible" viewBox="0 0 256 256">
@@ -62,13 +68,13 @@ export default function App() {
           
           <div className="hidden md:flex items-center gap-5 lg:gap-8">
             {navLinks.map((link) => (
-              <a 
-                key={link} 
-                href="#" 
-                className={`text-sm font-medium hover:opacity-70 transition-opacity ${link === 'Tools' ? 'hidden lg:inline-block' : ''}`}
+              <Link 
+                key={link.name} 
+                to={link.path} 
+                className={`text-sm font-medium hover:opacity-70 transition-opacity ${link.name === 'Tools' ? 'hidden lg:inline-block' : ''}`}
               >
-                {link}
-              </a>
+                {link.name}
+              </Link>
             ))}
           </div>
           
@@ -275,17 +281,20 @@ export default function App() {
               
               <div className="flex flex-col flex-1 p-5 gap-4 overflow-y-auto">
                 {navLinks.map((link, i) => (
-                  <motion.a
-                    key={link}
-                    href="#"
+                  <motion.div
+                    key={link.name}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.18 + i * 0.07, ease: "easeOut" }}
-                    className="text-lg font-medium hover:opacity-70 transition-opacity py-2 text-[#192837]"
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {link}
-                  </motion.a>
+                    <Link
+                      to={link.path}
+                      className="block text-lg font-medium hover:opacity-70 transition-opacity py-2 text-[#192837]"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
               
