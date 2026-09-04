@@ -83,7 +83,7 @@ Whether you're building your own AI SaaS, learning modern web development, or ju
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/resnalyzer.git
+git clone https://github.com/tarun11-xyz/resnalyzer.git
 cd resnalyzer
 ```
 
@@ -118,7 +118,7 @@ The app will launch, running both the Vite frontend and the Express backend simu
 
 This project is optimized for a **split deployment** — hosting the lightning-fast static frontend on Vercel/Netlify, and the heavy-duty API backend on Render.
 
-### Part 1 — Deploy the Backend to Render
+### Part 1 - Deploy the Backend to Render
 
 1. Create a new **Web Service** on [Render](https://render.com) connected to this repository.
 2. Set the **Build Command** to:
@@ -138,7 +138,7 @@ This project is optimized for a **split deployment** — hosting the lightning-f
 
 5. **Anti-sleep keep-alive:** Render's free tier sleeps after 15 minutes of inactivity. An endpoint is included at `/api/keep-alive`. Set up a free pinging service (like [cron-job.org](https://cron-job.org)) to hit `https://your-render-app.onrender.com/api/keep-alive` every 5–10 minutes to eliminate cold-start delays.
 
-### Part 2 — Deploy the Frontend to Vercel or Netlify
+### Part 2 - Deploy the Frontend to Vercel or Netlify
 
 1. Connect the **exact same repository** to [Vercel](https://vercel.com) or [Netlify](https://netlify.com).
 2. The platform auto-detects Vite and sets:
@@ -164,6 +164,6 @@ This project is licensed under the **MIT License**. Feel free to use, modify, an
 
 <div align="center">
 
-Made with ❤️ — contributions and stars are always welcome.
+Made with ❤️ by Tarun and stars are always welcome.
 
 </div>
