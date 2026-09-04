@@ -1,6 +1,6 @@
 {
   "name": "Resnalyzer",
-  "description": "Resume Analyzer and Vault Shield",
+  "description": "Resume Analyzer",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
